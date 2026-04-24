@@ -60,5 +60,3 @@ monsoon_data_loader.jl: Handles the NCDatasets parsing and continuous grid inter
 Energy-Optimal Pathing: Implement an A* algorithm to allow the AUV to "surf" the favorable edges of the gyre, optimizing for battery life over pure transit time.
 
 3D Bathymetry: Add ocean floor topography mapping to test obstacle avoidance in the coastal shallows.
-
-Run the main simulation script:

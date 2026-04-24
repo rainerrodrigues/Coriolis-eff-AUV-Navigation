@@ -38,3 +38,27 @@ You will need Julia installed, along with the following packages:
 using Pkg
 Pkg.add(["Oceananigans", "CairoMakie", "NCDatasets", "Interpolations"])
 ```
+
+## Running the Simulation
+Clone the repository.
+
+(Optional) Place your era5_indian_ocean_july.nc climate data file in the root directory. If no file is detected, the script will automatically generate a synthetic chaotic monsoon environment.
+```bash
+julia auv_coriolis_sim.jl
+```
+
+The script will output an animated indian_ocean_transit.mp4 file visualizing the dead-reckoning failure, the sensor noise cloud, and the successful EKF trajectory.
+
+## 📂 File Structure
+auv_coriolis_sim.jl: The main simulation loop, environmental setup, and CairoMakie visualization pipeline.
+
+ekf_math.jl: Contains the non-linear state transition functions and the derived Jacobian matrix for the filter.
+
+monsoon_data_loader.jl: Handles the NCDatasets parsing and continuous grid interpolation for boundary conditions.
+
+## 💡 Future Work
+Energy-Optimal Pathing: Implement an A* algorithm to allow the AUV to "surf" the favorable edges of the gyre, optimizing for battery life over pure transit time.
+
+3D Bathymetry: Add ocean floor topography mapping to test obstacle avoidance in the coastal shallows.
+
+Run the main simulation script:
